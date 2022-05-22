@@ -12,15 +12,15 @@ function display(productPageArr) {
     var products = document.createElement("div");
     products.setAttribute("id","products")
     var name = document.createElement("p");
-    name.innerText = elem.name;
+    name.innerText = `Name : ${elem.name}`;
     var category = document.createElement("p");
-    category.innerText = elem.category;
+    category.innerText = `Cateogry : ${elem.category}`;
     var image = document.createElement("img");
     image.setAttribute("src", elem.image);
     var price = document.createElement("p");
-    price.innerText = elem.price;
+    price.innerText = `Price : ${elem.price}`;
     var gender = document.createElement("p");
-    gender.innerText = elem.gender;
+    gender.innerText = `gender : ${elem.gender}`;
     var sold = document.createElement("button");
     sold.setAttribute("id", "sold");
     sold.innerText = "sold";
@@ -46,7 +46,7 @@ function display(productPageArr) {
 
   var length = productPageArr.length;
 
-  document.querySelector("#counter").innerText = length;
+  document.querySelector("#counter").innerText = `Total Intem In Cart : ${length}`;
 }
 
 function deleteFunc(elem, index) {
@@ -55,8 +55,8 @@ function deleteFunc(elem, index) {
   localStorage.setItem("Products", JSON.stringify(productPageArr));
   var newProductPageArr = JSON.parse(localStorage.getItem("products"));
   document.querySelector("#body").innerHTML = "";
-  display(newProductPageArr);
   window.location.reload();
+  display(newProductPageArr);
 }
 
 function changeColor(elem,index) {
